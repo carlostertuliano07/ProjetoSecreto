@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Página</title>
+    <style>
+        body {
+            background-color: #f8f1e9;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            color: #8d7966;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+        .video-container {
+            margin-top: 50px;
+        }
+        .typed-text {
+            margin-top: 100px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #8d7966;
+        }
+        .crime-scene {
+            position: relative;
+            width: 106%;
+            height: 120px;
+            margin-top: 300px;
+            margin-bottom: 100px;
+        }
+        .crime-scene::before,
+        .crime-scene::after {
+            content: "";
+            position: absolute;
+            width: 106%;
+            height: 120px;
+            background: repeating-linear-gradient(45deg, yellow, yellow 20px, black 20px, black 40px);
+        }
+        .crime-scene::before {
+            transform: rotate(13deg);
+        }
+        .crime-scene::after {
+            transform: rotate(-10deg);
+        }
+        .work-sign {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #8d7966;
+            color: #f8f1e9;
+            padding: 40px 80px;
+            font-size: 58px;
+            font-weight: bold;
+            border: 3px solid #a8a39d;
+            border-radius: 10px;
+            z-index: 1;
+        }
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .profile-image {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            background-color: #e2ddd9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Oculta partes da imagem fora do círculo */
+        }
+        .profile-image img {
+            width: 105%; /* Garante que a imagem cubra toda a div */
+            height: 100%; /* Mantém a proporção da imagem */
+            border-radius: 20%;
+        }
+        .progress-bar {
+            position: relative;
+            width: 3px;
+            height: 500px;
+            background-color: #d8c8b8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .progress {
+            position: absolute;
+            width: 100%;
+            height: 0;
+            background-color: #8d7966;
+            transition: height 1s ease;
+        }
+        .checkpoint {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px 0;
+        }
+        .checkpoint-circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #d8c8b8;
+            margin-bottom: 5px;
+            transition: background-color 0.5s ease;
+        }
+        .checkpoint-text {
+            background-color: #d8c8b8;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #8d7966;
+            position: absolute;
+            width: 200px;
+            text-align: center;
+        }
+        .checkpoint.completed .checkpoint-circle {
+            background-color: #8d7966;
+        }
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .start-box {
+            width: 100px;
+            padding: 5px;
+            background-color: #d8c8b8;
+            border-radius: 5px;
+            color: #8d7966;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        
+        <iframe width="720" height="480" src="https://www.youtube-nocookie.com/embed/-CT1pxV1Opw?si=ffo15NVa8eXiYcPF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    </div>
+
+    <div class="typed-text" id="typed-text"></div>
+
+    <div class="crime-scene">
+        <div class="work-sign">Trecho em obras</div>
+    </div>
+
+    <div class="profile-section">
+        <div class="profile">
+            <div class="start-box">Início do jogo</div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+                <div class="checkpoint completed">
+                    <div class="checkpoint-circle"></div>
+                    <div class="checkpoint-text" style="left: calc(100% + 10px);">Descobrir o que foi roubado</div>
+                </div>
+                <div class="checkpoint completed">
+                    <div class="checkpoint-circle"></div>
+                    <div class="checkpoint-text" style="right: calc(100% + 10px);">Descobrir o quem roubou</div>
+                </div>
+                <div class="checkpoint completed">
+                    <div class="checkpoint-circle"></div>
+                    <div class="checkpoint-text" style="left: calc(100% + 10px);">Encontrar Pimpão</div>
+                </div>
+            </div>
+            <div class="profile-image"><img width="300px" height="300px" src="pimpao.jpg" alt=""></div>
+        </div>
+    </div>
+    <div class="profile-section">
+        <div class="profile">
+            <div class="progress-bar">
+                <div class="progress"></div>
+                <div class="checkpoint">
+                    <div class="checkpoint-circle"></div>
+                    <div class="checkpoint-text" style="left: calc(100% + 10px);">Descobrir o que email de Zeca o Loro</div>
+                </div>
+                <div class="checkpoint">
+                    <div class="checkpoint-circle"></div>
+                    <div class="checkpoint-text" style="right: calc(100% + 10px);">Conversar com Zeca sobre o que foi tirado de você</div>
+                </div>
+                <div class="checkpoint">
+                    <div class="checkpoint-circle"></div>
+                    <div class="checkpoint-text" style="left: calc(100% + 10px);">Selecionar itens para a troca</div>
+                </div>
+                <div class="checkpoint">
+                    <div class="checkpoint-circle"></div>
+                    <div class="checkpoint-text" style="left: calc(100% + 10px);">Escolher dia para fazer a troca</div>
+                </div>
+            </div>
+            <div class="profile-image"><img src="int.png" alt=""></div>
+        </div>
+    </div>
+    <div class="profile-section">
+        <div class="profile">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="profile-image"><img src="int.png" alt=""></div>
+        </div>
+    </div>
+    <div class="profile-section">
+        <div class="profile">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="profile-image"><img src="int.png" alt=""></div>
+        </div>
+    </div>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const typedText = document.getElementById('typed-text');
+            const text = "Vamos relembrar a nossa história até aqui...";
+            let index = 0;
+
+            function typeEffect() {
+                if (index < text.length) {
+                    typedText.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeEffect, 100);
+                }
+            }
+
+            typeEffect();
+
+            const checkpoints = document.querySelectorAll('.checkpoint');
+            const progressBar = document.querySelector('.progress');
+
+            // Encontra o número total de checkpoints
+            const totalCheckpoints = checkpoints.length;
+
+            // Encontra o número de checkpoints completos
+            let completedCheckpoints = 0;
+            checkpoints.forEach(checkpoint => {
+                if (checkpoint.classList.contains('completed')) {
+                    completedCheckpoints++;
+                }
+            });
+
+            // Calcula a altura da barra de progresso com base no número de checkpoints completos
+            const progressHeight = `${(completedCheckpoints / 3) * 100}%`;
+            progressBar.style.height = progressHeight;
+        });
+    </script>
+</body>
+</html>
